@@ -1,0 +1,20 @@
+<launch>
+    <arg name="manager_name" default="nodelet_manager" />
+    <arg name="manager_threads" default="4" />
+
+    <node pkg="nodelet" type="nodelet" name="$(arg manager_name)" args="manager" output="screen">
+        <param name="num_worker_threads" value="$(arg manager_threads)" />
+    </node>
+
+    <node pkg="nodelet" type="nodelet" name="plugin_nodelet_topic_publisher_template" args="load ros_template_programs/PluginNodeletTopicPublisher $(arg manager_name)" >
+        <remap from="pub_msg" to="pub_msg_nodelet" />
+        <rosparam>
+            message : Hello, World Nodelet!
+            hz : 5.0
+        </rosparam>
+    </node>    
+
+    <node pkg="nodelet" type="nodelet" name="plugin_nodelet_topic_subscriber_template" args="load ros_template_programs/PluginNodeletTopicSubscriber $(arg manager_name)" >
+        <remap from="pub_msg" to="pub_msg_nodelet" />
+    </node>    
+</launch>

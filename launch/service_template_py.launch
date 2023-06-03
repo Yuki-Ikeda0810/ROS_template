@@ -1,0 +1,14 @@
+<launch>
+    <group ns = "service_template">
+        <!-- client -->
+        <node pkg="ros_template_programs" type="service_client_template.py" name="client" launch-prefix="xterm -font r16 -bg darkblue -e">
+            <rosparam>
+                a : 5
+                b : 2
+            </rosparam>
+        </node>
+        <!-- server -->
+        <node pkg="ros_template_programs" type="service_server_template.py" name="server" launch-prefix="xterm -font r16 -bg darkblue -e">
+        </node>
+    </group>
+</launch>

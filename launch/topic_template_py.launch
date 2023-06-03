@@ -1,0 +1,18 @@
+<launch>
+    <group ns = "topic_template">
+        <!-- publisher -->
+        <node pkg="ros_template_programs" type="topic_publisher_template.py" name="publisher" launch-prefix="xterm -font r16 -bg darkblue -e">
+            <rosparam>
+                message : Hello, SOBIT members!! 1
+            </rosparam>
+        </node>
+        <node pkg="ros_template_programs" type="topic_publisher_template.py" name="publisher2" launch-prefix="xterm -font r16 -bg darkblue -e">
+            <rosparam>
+                message : Hello, SOBIT members!! 2
+            </rosparam>
+        </node>
+        <!-- subscriber -->
+        <node pkg="ros_template_programs" type="topic_subscriber_template.py" name="subscriber" launch-prefix="xterm -font r16 -bg darkblue -e">
+        </node>
+    </group>
+</launch>

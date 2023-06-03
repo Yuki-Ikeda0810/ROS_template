@@ -1,0 +1,15 @@
+<library path="lib/libros_template_programs">
+    <class name="ros_template_programs/PluginNodeletTopicPublisher"
+        type="ros_template_programs::PluginNodeletTopicPublisher"
+        base_class_type="nodelet::Nodelet">
+        <description>
+        </description>
+    </class>
+
+    <class name="ros_template_programs/PluginNodeletTopicSubscriber"
+        type="ros_template_programs::PluginNodeletTopicSubscriber"
+        base_class_type="nodelet::Nodelet">
+        <description>
+        </description>
+    </class>
+</library>
